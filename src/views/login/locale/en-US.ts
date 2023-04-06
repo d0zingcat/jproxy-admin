@@ -1,0 +1,17 @@
+export default {
+  'login.title': 'JProxy Admin',
+  'login.username.error': 'Username can not be empty',
+  'login.password.error': 'Password can not be empty',
+  'login.username.placeholder': 'Please input username',
+  'login.password.placeholder': 'Please input password',
+  'login.rememberPassword': 'Remeber Password',
+  'login': 'Login',
+  'login.error': 'Login error, refresh and try again',
+  'login.success': 'Welcome to use',
+  'login.banner.slogan1': 'Sonarr x Radarr',
+  'login.banner.subSlogan1': 'Search Optimize, Result Format, Grab More',
+  'login.banner.slogan2': 'Jackett x Prowlarr',
+  'login.banner.subSlogan2': 'Support Two Most Popular Indexer Manager',
+  'login.banner.slogan3': 'qBittorrent',
+  'login.banner.subSlogan3': 'Title Format, Reduce Import Error',
+};

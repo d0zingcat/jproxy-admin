@@ -1,0 +1,17 @@
+export default {
+  'radarr.example.hash': 'HASH',
+  'radarr.example.originalText': 'Original Text',
+  'radarr.example.formatText': 'Format Text',
+  'radarr.example.validStatus': 'Status',
+  'radarr.example.validStatus.placeholder': 'Please choose status',
+  'radarr.example.validStatus.pass': 'Pass',
+  'radarr.example.validStatus.fail': 'Fail',
+  'radarr.example.originalText.placeholder': 'Please input original text',
+  'radarr.example.search': 'Search',
+  'radarr.example.reset': 'Reset',
+  'radarr.example.add': 'Add',
+  'radarr.example.add.success': 'Add Success',
+  'radarr.example.remove': 'Delete',
+  'radarr.example.remove.success': 'Delete Success',
+  'radarr.example.select.warning': 'Please select data',
+};

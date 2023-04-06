@@ -1,0 +1,17 @@
+export default {
+  'sonarr.example.hash': 'HASH',
+  'sonarr.example.originalText': 'Original Text',
+  'sonarr.example.formatText': 'Format Text',
+  'sonarr.example.validStatus': 'Status',
+  'sonarr.example.validStatus.placeholder': 'Please choose status',
+  'sonarr.example.validStatus.pass': 'Pass',
+  'sonarr.example.validStatus.fail': 'Fail',
+  'sonarr.example.originalText.placeholder': 'Please input original text',
+  'sonarr.example.search': 'Search',
+  'sonarr.example.reset': 'Reset',
+  'sonarr.example.add': 'Add',
+  'sonarr.example.add.success': 'Add success',
+  'sonarr.example.remove': 'Delete',
+  'sonarr.example.remove.success': 'Delete success',
+  'sonarr.example.select.warning': 'Please select data',
+};

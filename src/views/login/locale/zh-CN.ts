@@ -1,0 +1,17 @@
+export default {
+  'login.title': 'JProxy Admin',
+  'login.username.error': '用户名不能为空',
+  'login.password.error': '密码不能为空',
+  'login.username.placeholder': '请输入用户名',
+  'login.password.placeholder': '请输入密码',
+  'login.rememberPassword': '记住密码',
+  'login': '登录',
+  'login.error': '登录出错，请刷新重试',
+  'login.success': '欢迎使用',
+  'login.banner.slogan1': 'Sonarr x Radarr',
+  'login.banner.subSlogan1': '搜索优化，结果格式化处理，提升抓取成功率',
+  'login.banner.slogan2': 'Jackett x Prowlarr',
+  'login.banner.subSlogan2': '同时支持两大主流索引器',
+  'login.banner.slogan3': 'qBittorrent',
+  'login.banner.subSlogan3': '标题格式化处理，减少导入错误',
+};

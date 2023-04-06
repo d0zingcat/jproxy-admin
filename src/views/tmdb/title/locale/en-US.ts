@@ -1,0 +1,17 @@
+export default {
+  'tmdb.title.tvdbId': 'TVDB ID',
+  'tmdb.title.tmdbId': 'TMDB ID',
+  'tmdb.title.language': 'Language',
+  'tmdb.title.title': 'Title',
+  'tmdb.title.cleanTitle': 'Clean Title',
+  'tmdb.title.validStatus': 'Status',
+  'tmdb.title.title.placeholder': 'Please input title',
+  'tmdb.title.tvdbId.placeholder': 'Please input TVDB ID',
+  'tmdb.title.search': 'Search',
+  'tmdb.title.reset': 'Reset',
+  'tmdb.title.sync': 'Sync',
+  'tmdb.title.sync.success': 'Sync success',
+  'tmdb.title.remove': 'Delete',
+  'tmdb.title.remove.success': 'Delete Success',
+  'tmdb.title.select.warning': 'Please select data',
+};

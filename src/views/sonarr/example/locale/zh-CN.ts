@@ -1,0 +1,17 @@
+export default {
+  'sonarr.example.hash': 'HASH',
+  'sonarr.example.originalText': '原始文本',
+  'sonarr.example.formatText': '格式化文本',
+  'sonarr.example.validStatus': '状态',
+  'sonarr.example.validStatus.placeholder': '请选择状态',
+  'sonarr.example.validStatus.pass': '通过',
+  'sonarr.example.validStatus.fail': '失败',
+  'sonarr.example.originalText.placeholder': '请输入原始文本',
+  'sonarr.example.search': '搜索',
+  'sonarr.example.reset': '重置',
+  'sonarr.example.add': '新增',
+  'sonarr.example.add.success': '新增成功',
+  'sonarr.example.remove': '删除',
+  'sonarr.example.remove.success': '删除成功',
+  'sonarr.example.select.warning': '请先勾选数据',
+};
