@@ -14,4 +14,5 @@ export default {
   'tmdb.title.remove': 'Delete',
   'tmdb.title.remove.success': 'Delete Success',
   'tmdb.title.select.warning': 'Please select data',
+  'tmdb.title.save.success': 'Save success',
 };

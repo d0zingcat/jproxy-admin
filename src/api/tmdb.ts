@@ -30,3 +30,7 @@ export function queryTmdbTitle(params: TmdbTitleQueryRequest) {
 export function removeTmdbTitle(params: number[]) {
   return axios.post('/tmdb/title/remove', params);
 }
+
+export function saveTmdbTitle(params: TmdbTitle) {
+  return axios.post('/tmdb/title/save', params);
+}

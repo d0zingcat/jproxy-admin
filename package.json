@@ -1,7 +1,7 @@
 {
   "name": "jproxy-admin",
   "description": "Admin WebUI for JProxy",
-  "version": "3.0.0",
+  "version": "3.0.6",
   "private": true,
   "author": "LuckyPuppy514",
   "license": "MIT",

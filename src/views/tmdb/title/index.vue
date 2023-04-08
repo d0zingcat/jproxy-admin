@@ -92,6 +92,9 @@
         @page-size-change="onPageSizeChange"
         @page-change="onPageChange"
       >
+        <template #title="{ record }">
+          <a-input v-model="record.title" @change="onTitleChange(record)" />
+        </template>
         <template #validStatus="{ record }">
           <icon-check-circle
             v-if="record.validStatus === 1"
@@ -127,6 +130,7 @@
     queryTmdbTitle,
     removeTmdbTitle,
     syncTmdbTitle,
+    saveTmdbTitle,
   } from '@/api/tmdb';
 
   const showLoading = (loading) => {
@@ -177,6 +181,7 @@
     {
       title: t('tmdb.title.title'),
       dataIndex: 'title',
+      slotName: 'title',
       ellipsis: true,
       tooltip: true,
     },
@@ -269,6 +274,12 @@
       .finally(() => {
         hideLoading(syncLoading);
       });
+  };
+  const onTitleChange = (record) => {
+    saveTmdbTitle(record).then(() => {
+      Message.success(t('tmdb.title.save.success'));
+      search();
+    });
   };
   search();
 </script>

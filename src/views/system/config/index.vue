@@ -42,6 +42,7 @@
               <a-input
                 v-model="systemConfig.sonarrApikey"
                 allow-clear
+                type="password"
                 :placeholder="$t('system.config.apikey.placeholder')"
               />
             </a-form-item>
@@ -133,6 +134,7 @@
               <a-input
                 v-model="systemConfig.radarrApikey"
                 allow-clear
+                type="password"
                 :placeholder="$t('system.config.apikey.placeholder')"
               />
             </a-form-item>
@@ -246,6 +248,7 @@
               <a-input
                 v-model="systemConfig.tmdbApikey"
                 allow-clear
+                type="password"
                 :placeholder="$t('system.config.apikey.placeholder')"
               />
             </a-form-item>
