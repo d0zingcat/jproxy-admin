@@ -61,19 +61,6 @@
             </a-form-item>
             <a-form-item
               class="form-item"
-              field="sonarrDownloaderFormat"
-              :label="$t('system.config.downloaderFormat')"
-              :validate-status="systemConfigValidStatus.sonarrDownloaderFormat"
-              feedback
-            >
-              <a-input
-                v-model="systemConfig.sonarrDownloaderFormat"
-                :placeholder="$t('system.config.downloaderFormat.placeholder')"
-                allow-clear
-              />
-            </a-form-item>
-            <a-form-item
-              class="form-item"
               field="sonarrLanguage1"
               :label="$t('system.config.language1')"
             >
@@ -188,19 +175,6 @@
                 v-model="systemConfig.radarrIndexerFormat"
                 allow-clear
                 :placeholder="$t('system.config.indexerFormat.placeholder')"
-              />
-            </a-form-item>
-            <a-form-item
-              class="form-item"
-              field="radarrDownloaderFormat"
-              :label="$t('system.config.downloaderFormat')"
-              :validate-status="systemConfigValidStatus.radarrDownloaderFormat"
-              feedback
-            >
-              <a-input
-                v-model="systemConfig.radarrDownloaderFormat"
-                :placeholder="$t('system.config.downloaderFormat.placeholder')"
-                allow-clear
               />
             </a-form-item>
           </a-card>
@@ -451,13 +425,11 @@
     sonarrUrl: '',
     sonarrApikey: '',
     sonarrIndexerFormat: '',
-    sonarrDownloaderFormat: '',
     sonarrLanguage1: '',
     sonarrLanguage2: '',
     radarrUrl: '',
     radarrApikey: '',
     radarrIndexerFormat: '',
-    radarrDownloaderFormat: '',
     jackettUrl: '',
     prowlarrUrl: '',
     qbittorrentUrl: '',
@@ -473,11 +445,9 @@
     sonarrUrl: 'validating' as ValidateStatus,
     sonarrApikey: 'validating' as ValidateStatus,
     sonarrIndexerFormat: 'validating' as ValidateStatus,
-    sonarrDownloaderFormat: 'validating' as ValidateStatus,
     radarrUrl: 'validating' as ValidateStatus,
     radarrApikey: 'validating' as ValidateStatus,
     radarrIndexerFormat: 'validating' as ValidateStatus,
-    radarrDownloaderFormat: 'validating' as ValidateStatus,
     jackettUrl: 'validating' as ValidateStatus,
     prowlarrUrl: 'validating' as ValidateStatus,
     qbittorrentUrl: 'validating' as ValidateStatus,
