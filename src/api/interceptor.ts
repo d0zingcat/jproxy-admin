@@ -2,6 +2,7 @@ import axios from 'axios';
 import type { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { Message } from '@arco-design/web-vue';
 import { getToken } from '@/utils/auth';
+import i18n from '@/locale/index';
 
 export interface HttpResponse<T = unknown> {
   status: number;
@@ -40,9 +41,21 @@ axios.interceptors.response.use(
     return response;
   },
   (error) => {
-    let message = error.response ? error.response : error;
+    let message = error.response ? error.response : error.message;
     if (message.data) {
       message = message.data.error ? message.data.error : message.data;
+    }
+    if (message === 'Forbidden') {
+      if (!window.location.href.endsWith('/login')) {
+        Message.error({
+          content: i18n.global.t('login.forbidden'),
+          duration: 5 * 1000,
+        });
+        setTimeout(() => {
+          window.location.href = '/login';
+        }, 1500);
+      }
+      return Promise.resolve();
     }
     Message.error({
       content: message || 'Request Error',

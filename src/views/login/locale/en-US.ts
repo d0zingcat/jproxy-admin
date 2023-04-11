@@ -14,4 +14,5 @@ export default {
   'login.banner.subSlogan2': 'Support Two Most Popular Indexer Manager',
   'login.banner.slogan3': 'qBittorrent',
   'login.banner.subSlogan3': 'Title Format, Reduce Import Error',
+  'login.forbidden': 'Login has expired, please relogin',
 };

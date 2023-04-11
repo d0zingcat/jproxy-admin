@@ -99,12 +99,51 @@
               </a-select>
             </a-form-item>
           </a-card>
+          <a-card
+            hoverable
+            class="form-card"
+            :title="$t('system.config.indexer')"
+            :style="{ padding: '0 0 52px 0' }"
+          >
+            <template #extra>
+              <a-link href="https://kutt.lckp.top/pVIb3w" target="_blank">
+                <icon-question-circle size="large" />
+              </a-link>
+            </template>
+            <a-form-item
+              class="form-item"
+              field="jackettUrl"
+              :label="$t('system.config.jackett')"
+              :validate-status="systemConfigValidStatus.jackettUrl"
+              feedback
+            >
+              <a-input
+                v-model="systemConfig.jackettUrl"
+                allow-clear
+                :placeholder="$t('system.config.url.placeholder')"
+              />
+            </a-form-item>
+            <a-form-item
+              class="form-item"
+              field="prowlarrUrl"
+              :label="$t('system.config.prowlarr')"
+              :validate-status="systemConfigValidStatus.prowlarrUrl"
+              feedback
+            >
+              <a-input
+                v-model="systemConfig.prowlarrUrl"
+                allow-clear
+                :placeholder="$t('system.config.url.placeholder')"
+              />
+            </a-form-item>
+          </a-card>
         </a-col>
         <a-col :span="12">
           <a-card
             hoverable
             class="form-card"
             :title="$t('system.config.radarr')"
+            :style="{ padding: '0 0 103px 0' }"
           >
             <template #extra>
               <a-link href="https://kutt.lckp.top/YR2UK2" target="_blank">
@@ -151,11 +190,24 @@
                 :placeholder="$t('system.config.indexerFormat.placeholder')"
               />
             </a-form-item>
+            <a-form-item
+              class="form-item"
+              field="radarrDownloaderFormat"
+              :label="$t('system.config.downloaderFormat')"
+              :validate-status="systemConfigValidStatus.radarrDownloaderFormat"
+              feedback
+            >
+              <a-input
+                v-model="systemConfig.radarrDownloaderFormat"
+                :placeholder="$t('system.config.downloaderFormat.placeholder')"
+                allow-clear
+              />
+            </a-form-item>
           </a-card>
           <a-card
             hoverable
             class="form-card"
-            :title="$t('system.config.downloader')"
+            :title="$t('system.config.qbittorrent')"
           >
             <template #extra>
               <a-link href="https://kutt.lckp.top/EGZxGR" target="_blank">
@@ -165,7 +217,7 @@
             <a-form-item
               class="form-item"
               field="qbittorrentUrl"
-              :label="$t('system.config.qbittorrent')"
+              :label="$t('system.config.url')"
               :validate-status="systemConfigValidStatus.qbittorrentUrl"
               feedback
             >
@@ -175,49 +227,37 @@
                 :placeholder="$t('system.config.url.placeholder')"
               />
             </a-form-item>
+            <a-form-item
+              class="form-item"
+              field="qbittorrentUsername"
+              :label="$t('system.config.username')"
+              :validate-status="systemConfigValidStatus.qbittorrentUsername"
+              feedback
+            >
+              <a-input
+                v-model="systemConfig.qbittorrentUsername"
+                allow-clear
+                :placeholder="$t('system.config.username.placeholder')"
+              />
+            </a-form-item>
+            <a-form-item
+              class="form-item"
+              field="qbittorrentPassword"
+              :label="$t('system.config.password')"
+              :validate-status="systemConfigValidStatus.qbittorrentPassword"
+              feedback
+            >
+              <a-input
+                v-model="systemConfig.qbittorrentPassword"
+                type="password"
+                allow-clear
+                :placeholder="$t('system.config.password.placeholder')"
+              />
+            </a-form-item>
           </a-card>
         </a-col>
       </a-row>
       <a-row :gutter="20">
-        <a-col :span="12">
-          <a-card
-            hoverable
-            class="form-card"
-            :title="$t('system.config.indexer')"
-          >
-            <template #extra>
-              <a-link href="https://kutt.lckp.top/pVIb3w" target="_blank">
-                <icon-question-circle size="large" />
-              </a-link>
-            </template>
-            <a-form-item
-              class="form-item"
-              field="jackettUrl"
-              :label="$t('system.config.jackett')"
-              :validate-status="systemConfigValidStatus.jackettUrl"
-              feedback
-            >
-              <a-input
-                v-model="systemConfig.jackettUrl"
-                allow-clear
-                :placeholder="$t('system.config.url.placeholder')"
-              />
-            </a-form-item>
-            <a-form-item
-              class="form-item"
-              field="prowlarrUrl"
-              :label="$t('system.config.prowlarr')"
-              :validate-status="systemConfigValidStatus.prowlarrUrl"
-              feedback
-            >
-              <a-input
-                v-model="systemConfig.prowlarrUrl"
-                allow-clear
-                :placeholder="$t('system.config.url.placeholder')"
-              />
-            </a-form-item>
-          </a-card>
-        </a-col>
         <a-col :span="12">
           <a-card hoverable class="form-card" :title="$t('system.config.tmdb')">
             <template #extra>
@@ -254,9 +294,7 @@
             </a-form-item>
           </a-card>
         </a-col>
-      </a-row>
-      <a-row :gutter="20">
-        <a-col :span="24">
+        <a-col :span="12">
           <a-card
             hoverable
             class="form-card"
@@ -419,9 +457,12 @@
     radarrUrl: '',
     radarrApikey: '',
     radarrIndexerFormat: '',
+    radarrDownloaderFormat: '',
     jackettUrl: '',
     prowlarrUrl: '',
     qbittorrentUrl: '',
+    qbittorrentUsername: '',
+    qbittorrentPassword: '',
     transmissionUrl: '',
     tmdbUrl: '',
     tmdbApikey: '',
@@ -436,9 +477,12 @@
     radarrUrl: 'validating' as ValidateStatus,
     radarrApikey: 'validating' as ValidateStatus,
     radarrIndexerFormat: 'validating' as ValidateStatus,
+    radarrDownloaderFormat: 'validating' as ValidateStatus,
     jackettUrl: 'validating' as ValidateStatus,
     prowlarrUrl: 'validating' as ValidateStatus,
     qbittorrentUrl: 'validating' as ValidateStatus,
+    qbittorrentUsername: 'validating' as ValidateStatus,
+    qbittorrentPassword: 'validating' as ValidateStatus,
     transmissionUrl: 'validating' as ValidateStatus,
     tmdbUrl: 'validating' as ValidateStatus,
     tmdbApikey: 'validating' as ValidateStatus,
