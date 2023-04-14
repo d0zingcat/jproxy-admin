@@ -90,7 +90,6 @@
             hoverable
             class="form-card"
             :title="$t('system.config.indexer')"
-            :style="{ padding: '0 0 52px 0' }"
           >
             <template #extra>
               <a-link href="https://kutt.lckp.top/pVIb3w" target="_blank">
@@ -121,6 +120,57 @@
                 v-model="systemConfig.prowlarrUrl"
                 allow-clear
                 :placeholder="$t('system.config.url.placeholder')"
+              />
+            </a-form-item>
+          </a-card>
+          <a-card
+            hoverable
+            class="form-card"
+            :title="$t('system.config.qbittorrent')"
+          >
+            <template #extra>
+              <a-link href="https://kutt.lckp.top/EGZxGR" target="_blank">
+                <icon-question-circle size="large" />
+              </a-link>
+            </template>
+            <a-form-item
+              class="form-item"
+              field="qbittorrentUrl"
+              :label="$t('system.config.url')"
+              :validate-status="systemConfigValidStatus.qbittorrentUrl"
+              feedback
+            >
+              <a-input
+                v-model="systemConfig.qbittorrentUrl"
+                allow-clear
+                :placeholder="$t('system.config.url.placeholder')"
+              />
+            </a-form-item>
+            <a-form-item
+              class="form-item"
+              field="qbittorrentUsername"
+              :label="$t('system.config.username')"
+              :validate-status="systemConfigValidStatus.qbittorrentUsername"
+              feedback
+            >
+              <a-input
+                v-model="systemConfig.qbittorrentUsername"
+                allow-clear
+                :placeholder="$t('system.config.username.placeholder')"
+              />
+            </a-form-item>
+            <a-form-item
+              class="form-item"
+              field="qbittorrentPassword"
+              :label="$t('system.config.password')"
+              :validate-status="systemConfigValidStatus.qbittorrentPassword"
+              feedback
+            >
+              <a-input
+                v-model="systemConfig.qbittorrentPassword"
+                type="password"
+                allow-clear
+                :placeholder="$t('system.config.password.placeholder')"
               />
             </a-form-item>
           </a-card>
@@ -178,61 +228,6 @@
               />
             </a-form-item>
           </a-card>
-          <a-card
-            hoverable
-            class="form-card"
-            :title="$t('system.config.qbittorrent')"
-          >
-            <template #extra>
-              <a-link href="https://kutt.lckp.top/EGZxGR" target="_blank">
-                <icon-question-circle size="large" />
-              </a-link>
-            </template>
-            <a-form-item
-              class="form-item"
-              field="qbittorrentUrl"
-              :label="$t('system.config.url')"
-              :validate-status="systemConfigValidStatus.qbittorrentUrl"
-              feedback
-            >
-              <a-input
-                v-model="systemConfig.qbittorrentUrl"
-                allow-clear
-                :placeholder="$t('system.config.url.placeholder')"
-              />
-            </a-form-item>
-            <a-form-item
-              class="form-item"
-              field="qbittorrentUsername"
-              :label="$t('system.config.username')"
-              :validate-status="systemConfigValidStatus.qbittorrentUsername"
-              feedback
-            >
-              <a-input
-                v-model="systemConfig.qbittorrentUsername"
-                allow-clear
-                :placeholder="$t('system.config.username.placeholder')"
-              />
-            </a-form-item>
-            <a-form-item
-              class="form-item"
-              field="qbittorrentPassword"
-              :label="$t('system.config.password')"
-              :validate-status="systemConfigValidStatus.qbittorrentPassword"
-              feedback
-            >
-              <a-input
-                v-model="systemConfig.qbittorrentPassword"
-                type="password"
-                allow-clear
-                :placeholder="$t('system.config.password.placeholder')"
-              />
-            </a-form-item>
-          </a-card>
-        </a-col>
-      </a-row>
-      <a-row :gutter="20">
-        <a-col :span="12">
           <a-card hoverable class="form-card" :title="$t('system.config.tmdb')">
             <template #extra>
               <a-link href="https://kutt.lckp.top/5mekxe" target="_blank">
@@ -267,8 +262,61 @@
               />
             </a-form-item>
           </a-card>
+          <a-card
+            hoverable
+            class="form-card"
+            :title="$t('system.config.transmission')"
+          >
+            <template #extra>
+              <a-link href="https://kutt.lckp.top/Ukf7bd" target="_blank">
+                <icon-question-circle size="large" />
+              </a-link>
+            </template>
+            <a-form-item
+              class="form-item"
+              field="transmissionUrl"
+              :label="$t('system.config.url')"
+              :validate-status="systemConfigValidStatus.transmissionUrl"
+              feedback
+            >
+              <a-input
+                v-model="systemConfig.transmissionUrl"
+                allow-clear
+                :placeholder="$t('system.config.url.placeholder')"
+              />
+            </a-form-item>
+            <a-form-item
+              class="form-item"
+              field="transmissionUsername"
+              :label="$t('system.config.username')"
+              :validate-status="systemConfigValidStatus.transmissionUsername"
+              feedback
+            >
+              <a-input
+                v-model="systemConfig.transmissionUsername"
+                allow-clear
+                :placeholder="$t('system.config.username.placeholder')"
+              />
+            </a-form-item>
+            <a-form-item
+              class="form-item"
+              field="transmissionPassword"
+              :label="$t('system.config.password')"
+              :validate-status="systemConfigValidStatus.transmissionPassword"
+              feedback
+            >
+              <a-input
+                v-model="systemConfig.transmissionPassword"
+                type="password"
+                allow-clear
+                :placeholder="$t('system.config.password.placeholder')"
+              />
+            </a-form-item>
+          </a-card>
         </a-col>
-        <a-col :span="12">
+      </a-row>
+      <a-row :gutter="20">
+        <a-col :span="24">
           <a-card
             hoverable
             class="form-card"
@@ -436,6 +484,8 @@
     qbittorrentUsername: '',
     qbittorrentPassword: '',
     transmissionUrl: '',
+    transmissionUsername: '',
+    transmissionPassword: '',
     tmdbUrl: '',
     tmdbApikey: '',
     cleanTitleRegex: '',
@@ -454,6 +504,8 @@
     qbittorrentUsername: 'validating' as ValidateStatus,
     qbittorrentPassword: 'validating' as ValidateStatus,
     transmissionUrl: 'validating' as ValidateStatus,
+    transmissionUsername: 'validating' as ValidateStatus,
+    transmissionPassword: 'validating' as ValidateStatus,
     tmdbUrl: 'validating' as ValidateStatus,
     tmdbApikey: 'validating' as ValidateStatus,
     cleanTitleRegex: 'validating' as ValidateStatus,

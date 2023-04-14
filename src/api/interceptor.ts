@@ -55,12 +55,12 @@ axios.interceptors.response.use(
           window.location.href = '/login';
         }, 1500);
       }
-      return Promise.resolve();
+    } else {
+      Message.error({
+        content: message || 'Request Error',
+        duration: 5 * 1000,
+      });
     }
-    Message.error({
-      content: message || 'Request Error',
-      duration: 5 * 1000,
-    });
     return Promise.reject(error);
   }
 );

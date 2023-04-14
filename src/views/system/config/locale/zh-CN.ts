@@ -19,6 +19,7 @@ export default {
   'system.config.jackett': 'Jackett',
   'system.config.prowlarr': 'Prowlarr',
   'system.config.qbittorrent': 'qBittorrent',
+  'system.config.transmission': 'Transmission',
   'system.config.username': '用户名',
   'system.config.username.placeholder': '请输入用户名',
   'system.config.password': '密　码',

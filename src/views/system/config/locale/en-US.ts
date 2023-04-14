@@ -20,6 +20,7 @@ export default {
   'system.config.jackett': 'Jackett',
   'system.config.prowlarr': 'Prowlarr',
   'system.config.qbittorrent': 'qBittorrent',
+  'system.config.transmission': 'Transmission',
   'system.config.username': 'Username',
   'system.config.username.placeholder': 'Please input username',
   'system.config.password': 'Password',
