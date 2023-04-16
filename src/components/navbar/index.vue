@@ -18,6 +18,13 @@
         >
           JProxy
         </a-typography-title>
+        <a-link
+          style="margin-top: 15px; font-size: 13px; color: var(--color-text-1)"
+          href="https://github.com/LuckyPuppy514/jproxy/blob/main/changelog.md"
+          target="_blank"
+        >
+          v{{ version }}
+        </a-link>
         <icon-menu-fold
           v-if="!topMenu && appStore.device === 'mobile'"
           style="font-size: 22px; cursor: pointer"
@@ -145,7 +152,12 @@
   import useLocale from '@/hooks/locale';
   import useUser from '@/hooks/user';
   import Menu from '@/components/menu/index.vue';
+  import { systemConfigVersion } from '@/api/system';
 
+  const version = ref('3.0.0');
+  systemConfigVersion().then((res) => {
+    version.value = res.data;
+  });
   const appStore = useAppStore();
   const { logout } = useUser();
   const { changeLocale, currentLocale } = useLocale();

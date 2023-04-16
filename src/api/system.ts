@@ -35,6 +35,10 @@ export function updateSystemUser(params: SystemUser) {
   return axios.post<SystemUser>('/system/user/update', params);
 }
 
+export function systemConfigVersion() {
+  return axios.get<string>('/system/config/version');
+}
+
 export function querySystemConfig() {
   return axios.get<SystemConfig[]>('/system/config/query');
 }

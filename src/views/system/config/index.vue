@@ -602,7 +602,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 10px 0 10px 0;
+    padding: 25px 0 25px 0;
     background: var(--color-bg-2);
     text-align: center;
   }
