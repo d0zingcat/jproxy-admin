@@ -14,6 +14,7 @@ import localeRadarrRule from '@/views/radarr/rule/locale/zh-CN';
 import localeRadarrExample from '@/views/radarr/example/locale/zh-CN';
 
 import localeRuleForm from '@/components/rule-form/locale/zh-CN';
+import localeTmdbForm from '@/components/tmdb-form/locale/zh-CN';
 import localeExampleForm from '@/components/example-form/locale/zh-CN';
 
 import localeException404 from '@/views/exception/404/locale/zh-CN';
@@ -62,6 +63,7 @@ export default {
   ...localeRadarrExample,
 
   ...localeRuleForm,
+  ...localeTmdbForm,
   ...localeExampleForm,
 
   ...localeException404,

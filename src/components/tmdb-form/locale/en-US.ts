@@ -1,0 +1,15 @@
+export default {
+  'tmdb.form.add.title': 'Add TMDB Title',
+  'tmdb.form.edit.title': 'Edit TMDB Title',
+  'tmdb.form.tvdbId': 'TVDB ID',
+  'tmdb.form.tvdbId.placeholder': 'Please input TVDB ID',
+  'tmdb.form.tvdbId.error': 'TVDB ID can not be empty',
+  'tmdb.form.tmdbId': 'TMDB ID',
+  'tmdb.form.tmdbId.placeholder': 'Please input TMDB ID',
+  'tmdb.form.language': 'Language',
+  'tmdb.form.language.placeholder': 'Please choose language',
+  'tmdb.form.language.error': 'Language can not be empty',
+  'tmdb.form.title': 'Title',
+  'tmdb.form.title.placeholder': 'Please input title',
+  'tmdb.form.title.error': 'Title can not be empty',
+};

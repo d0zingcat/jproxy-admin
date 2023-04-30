@@ -1,0 +1,16 @@
+export default {
+  'tmdb.form.add.title': '新增 TMDB 标题',
+  'tmdb.form.edit.title': '编辑 TMDB 标题',
+  'tmdb.form.tvdbId': 'TVDB ID',
+  'tmdb.form.tvdbId.placeholder': '请输入 TVDB ID',
+  'tmdb.form.tvdbId.error': 'TVDB ID 不能为空',
+  'tmdb.form.tmdbId': 'TMDB ID',
+  'tmdb.form.tmdbId.placeholder': '请输入 TMDB ID',
+  'tmdb.form.priority.placeholder': '请输入 TMDB ID',
+  'tmdb.form.language': '语言',
+  'tmdb.form.language.placeholder': '请选择语言',
+  'tmdb.form.language.error': '语言不能为空',
+  'tmdb.form.title': '标题',
+  'tmdb.form.title.placeholder': '请输入标题',
+  'tmdb.form.title.error': '标题不能为空',
+};

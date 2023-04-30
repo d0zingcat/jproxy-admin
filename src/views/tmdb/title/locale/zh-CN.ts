@@ -15,4 +15,6 @@ export default {
   'tmdb.title.remove.success': '删除成功',
   'tmdb.title.select.warning': '请先勾选数据',
   'tmdb.title.save.success': '保存成功',
+  'tmdb.title.add': '新增',
+  'tmdb.title.edit': '编辑',
 };

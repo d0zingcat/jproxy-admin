@@ -1,6 +1,12 @@
 <template>
   <div class="container">
     <Breadcrumb :items="['menu.sonarr', 'menu.sonarr.tmdb']" />
+    <TmdbForm
+      v-model:visible="visible"
+      :data="tmdb"
+      :title="title"
+      @save="save"
+    ></TmdbForm>
     <a-card class="general-card" :title="t('menu.sonarr.tmdb')">
       <a-row>
         <a-col :flex="1">
@@ -61,6 +67,17 @@
           <a-space>
             <a-button
               type="primary"
+              status="success"
+              :loading="addLoading"
+              @click="add"
+            >
+              <template #icon>
+                <icon-plus />
+              </template>
+              {{ $t('tmdb.title.add') }}
+            </a-button>
+            <a-button
+              type="primary"
               status="danger"
               :loading="removeLoading"
               @click="remove"
@@ -111,18 +128,25 @@
             }"
           />
         </template>
+        <template #edit="{ record }">
+          <a-button type="text" size="mini" @click="edit(record)">
+            <icon-edit size="medium" />
+          </a-button>
+        </template>
       </a-table>
     </a-card>
   </div>
 </template>
 
 <script lang="ts" setup>
+  import TmdbForm from '@/components/tmdb-form/index.vue';
   import { computed, ref, reactive } from 'vue';
   import { useI18n } from 'vue-i18n';
   import { Message } from '@arco-design/web-vue';
   import type {
     TableColumnData,
     TableRowSelection,
+    TableData,
   } from '@arco-design/web-vue/es/table/interface';
   import { Pagination } from '@/types/global';
   import {
@@ -142,8 +166,10 @@
     }, 300);
   };
   const { t } = useI18n();
+  const visible = ref(false);
   const searchLoading = ref(false);
   const tableLoading = ref(false);
+  const addLoading = ref(false);
   const removeLoading = ref(false);
   const syncLoading = ref(false);
   const selectedKeys = ref([]);
@@ -198,6 +224,12 @@
       align: 'center',
       width: 100,
     },
+    {
+      title: t('tmdb.title.edit'),
+      slotName: 'edit',
+      align: 'center',
+      width: 100,
+    },
   ]);
   const basePagination: Pagination = {
     current: 1,
@@ -249,6 +281,13 @@
     pagination.pageSize = pageSize;
     query({ ...pagination, ...queryForm.value });
   };
+  const title = ref('');
+  const tmdb = ref({});
+  const add = () => {
+    title.value = t('tmdb.form.add.title');
+    tmdb.value = { language: 'zh-CN' };
+    visible.value = true;
+  };
   const remove = () => {
     if (!selectedKeys.value || selectedKeys.value.length === 0) {
       Message.warning(t('tmdb.title.select.warning'));
@@ -280,6 +319,25 @@
       Message.success(t('tmdb.title.save.success'));
       search();
     });
+  };
+  const edit = (record: TableData) => {
+    title.value = t('tmdb.form.edit.title');
+    tmdb.value = record;
+    visible.value = true;
+  };
+  const save = (params: TmdbTitle, callback) => {
+    saveTmdbTitle(params)
+      .then(() => {
+        Message.success(t('tmdb.title.save.success'));
+        search();
+        callback(true);
+      })
+      .catch(() => {
+        callback(false);
+      })
+      .finally(() => {
+        hideLoading(addLoading);
+      });
   };
   search();
 </script>

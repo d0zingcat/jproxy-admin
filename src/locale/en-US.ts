@@ -14,6 +14,7 @@ import localeRadarrRule from '@/views/radarr/rule/locale/en-US';
 import localeRadarrExample from '@/views/radarr/example/locale/en-US';
 
 import localeRuleForm from '@/components/rule-form/locale/en-US';
+import localeTmdbForm from '@/components/tmdb-form/locale/en-US';
 import localeExampleForm from '@/components/example-form/locale/en-US';
 
 import localeException404 from '@/views/exception/404/locale/en-US';
@@ -62,6 +63,7 @@ export default {
   ...localeRadarrExample,
 
   ...localeRuleForm,
+  ...localeTmdbForm,
   ...localeExampleForm,
 
   ...localeException404,
